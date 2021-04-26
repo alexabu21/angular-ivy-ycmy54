@@ -1,0 +1,12 @@
+.full-html{
+  background-color: silver;
+}
+#but{
+  text-align: center;
+}
+.form-control{
+  text-align: center;
+}
+input.ng-invalid.ng-touched{
+  border:1px solid red;
+}

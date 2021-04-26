@@ -1,0 +1,129 @@
+<html class="full-html">
+  <head> 
+    <title> User Creation </title>
+  </head>
+  <body>
+    <div class="full-body">
+    <h1> Create new User </h1>
+    <hr>
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="form-register"> 
+      <div class="form-group" style="text-align:center">
+        <mat-label>First Name</mat-label>
+        <input class="form-control" 
+          type="text" 
+          id="fname"
+          placeholder= "First Name" 
+          ngModel 
+          size=35px;
+          required 
+          name="first name">
+        </div>
+        <hr>
+        <div class="form-group" style="text-align:center">
+        Last Name
+        <input class="form-control"
+          type="text"
+          id="lname" 
+          placeholder=" Last Name" 
+          size="35px" 
+          ngModel 
+          required 
+          name="last name">
+      </div><hr>
+      <div class="form-group" style="text-align:center">
+       Age
+        <input class="form-control" 
+          type="text" 
+          id="age"
+          placeholder="Age"
+          size="35px"
+          ngModel 
+          required
+          name="age">
+      </div>
+      <hr>
+      <div class="form-group" style="text-align:center">
+      <mat-form-field>
+       Gender
+       <mat-select class="form-control" name="gender"  required id="gen">
+         <mat-option value="select"> --select--</mat-option>
+         <mat-option value="male">Male</mat-option>
+         <mat-option value="female">Female</mat-option>
+         <mat-option value="transgender"> Transgender</mat-option>
+         <mat-option value ="pnot"> Ptefer Not to Say</mat-option>
+       </mat-select>
+       </mat-form-field>
+      </div>
+      <hr>
+      <div class="form-group" style="text-align:center">
+        Mobile Number
+        <input class="form-control"
+          type="text" 
+          id="mnumber"
+          placeholder="Number" 
+          size="35px" 
+          ngModel 
+          required 
+          name="Mobile Number">  
+      </div>
+      <hr>
+      <div style="text-align:center">
+         <button type="submit" 
+          onclick="alert('User Has Been Created')"
+          [disabled]="!f.valid"> Submit </button>
+      </div>
+      </form>
+      </div>
+  <table border="10px" class= "center">  
+  <div><tr>
+      <td><label>First Name</label></td>
+      <select [(ngModel)]="selectedService">
+     <option *ngFor="let service of Services" [ngValue]="service">
+      {{service.firstname}}</option>
+</select>
+</tr>
+</div>
+<br>
+<div><tr>
+  <td><label>Last Name</label></td>
+  <td><input type="text"  [(ngModel)]="selectedService.lastname" ></td>
+</tr>
+    
+</div>
+<br>
+<div><tr>
+  <td><label>Age</label></td>
+  <td><input type="text"  [(ngModel)]="selectedService.age" ></td>
+  </tr>
+</div>
+<br>
+<div><tr>
+  <td><label>Gender</label><td>
+  <td><input type="text"  [(ngModel)]="selectedService.gender" ></td>
+  </tr>
+</div>
+<br>
+<div><tr>
+  <td><label>Mobile Number</label></td>
+  <td><input type="text"  [(ngModel)]="selectedService.mobilenumber" ></td>
+  </tr>
+</div>
+  </table>
+<br>
+
+
+    </body>
+
+</html>
+
+<!--<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Favorite food</mat-label>
+    <input matInput placeholder="Ex. Pizza" value="Sushi">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
+</form>-->
